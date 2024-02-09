@@ -11,4 +11,4 @@ function findOne(one) {
         }
     }
 }
-console.log(findOne(numbers))
+console.log(findOne(numbers));
