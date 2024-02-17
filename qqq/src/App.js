@@ -6,20 +6,33 @@ import {Route, Routes, Link} from 'react-router-dom'
 import {About} from './Pages/About'
 import {Skills} from './Pages/Skills'
 import {Contacts} from './Pages/Contacts'
+import AdbIcon from '@material-ui/icons/Adb'
+import AddIcon from '@material-ui/icons/Add'
+import EuroIcon  from '@material-ui/icons/Euro'
+import ErrorIcon  from '@material-ui/icons/Error'
+import { makeStyles } from '@material-ui/core/styles';
 
-
-
-
+const useStyles = makeStyles((theme) => ({
+  footer: {
+    position: 'fixed',
+    bottom: '0',
+    width: '100%',
+    textAlign: 'center',
+    padding: '20px 0',
+    backgroundColor: '#3f51b5'
+    
+  }
+}));
 
 
 function App() {
-
+  const classes = useStyles();
   return (
 <>
     <AppBar position='fixed'>
       <Container fixed>
       <Toolbar style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <IconButton color="inherit" component={Link} to="/home">
+          <IconButton color="inherit" component={Link} to="/">
           <MenuIcon />
           </IconButton>
           
@@ -35,7 +48,7 @@ function App() {
 
 
     <Routes>
-        <Route path='/home' element={
+        <Route path='/' element={
           <main>
             <div>
               <Container maxWidth="sm">
@@ -55,6 +68,25 @@ function App() {
         <Route path='/skills' element={<Skills />} />
         <Route path='/contacts' element={<Contacts />} />
       </Routes>
+
+
+
+
+      <footer className={classes.footer} >
+       <Typography variant="h6" align='center' gutterBottom>Web Blog</Typography>
+       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+       <IconButton color="inherit">
+          <AdbIcon />
+          </IconButton><IconButton color="inherit">
+          <AddIcon />
+          </IconButton><IconButton color="inherit">
+          <EuroIcon  />
+          </IconButton><IconButton color="inherit">
+          <ErrorIcon />
+          </IconButton>
+          </div>
+      <Typography align='center' color="textSecondary">Web Developer Blog CO.</Typography>
+      </footer>
     </>
   );
 }

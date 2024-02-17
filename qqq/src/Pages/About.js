@@ -1,11 +1,10 @@
 import React from 'react';
-import {Container, Typography, Grid, Card, CardMedia, CardContent} from '@material-ui/core'
-
-const cards = [1,2,3,4,5,6,7,8,9];
-
-
+import {Container, Typography, Grid, Card, CardMedia, CardContent, Button, IconButton} from '@material-ui/core'
+import MenuIcon from '@material-ui/icons/RecentActors'
 
 const About = () => {
+    const cards = [1,2,3,4,5,6,7,8,9];
+    
     return(
      <main>
       <div>
@@ -25,9 +24,14 @@ const About = () => {
                                 
                                 
                             </CardMedia>
-                                <Typography variant="h5">
-                                    Chinazes
+                                <Typography variant="h5" align='center'>
+                                    Web Blog
                                 </Typography>
+                                <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                                <Button color="primary">Go Go</Button>
+                                <IconButton color="inherit">
+          <MenuIcon /></IconButton>
+                                </div>
                         </Card>
 
                     </Grid>
