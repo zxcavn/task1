@@ -82,9 +82,9 @@
     }
 }
 
-.pets-head{
-    padding-bottom: 30px;
-}
+.header{
+    padding: 30px 0 30px 0;
+  }
 
 @media screen and (max-width: 1280px) {
     .disk{
@@ -105,9 +105,11 @@
     .buttons-pets{
         gap: 5px;
     }
-    .ourfriends-container{
-        padding: 80px 10px 100px 10px;
+  
+    .ourfriends-cards{
+        flex-direction: column;
     }
+  
 }
 
 
