@@ -1,42 +1,16 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: inherit; 
-    text-decoration: none;
-}
 
-:root{
-    /*color*/
-    --color-primary: #F1CDB3;
-    --color-deffault: #ffffff;
-    --color-dark-s: #cdcdcd;
-    --color-black: #000000;
-    --color-dark-3xl: #292929;
-    --color-dark-l: #545454;
-    --color-dark-xl: #4C4C4C;
-    --color-dark-m: #B2B2B2;    
-    --color-primary-light: #FDDCC4;
-    --color-light-s:#FAFAFA;  
-    --color-light-l:#F6F6F6;
-
-}
 .header-nt{
     background-image:  url("style/images/fon.svg");
     background-size: cover;
     background-position: center;
   }
   .header{
-    display: flex;
-    justify-content: center;
     padding: 30px 0 0 0;
   }
   .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
-    width: 1200px;  
   }
 
 .logo-container{
@@ -141,28 +115,18 @@
 .notonly-container{
     display: flex;
     justify-content: space-between; 
-   
-    width: 1200px
 }
 .notonly{
-    display: flex;
-    justify-content: center;
     padding: 100px 0 0 0;
 }
 
 
 
 /**/
-.about{
-    display: flex;
-    justify-content: center;
-    padding: 80px 0 100px 0;
-}
+
 .about-container{
     display: flex;
     justify-content: space-between;
-    width: 1200px;
-  
     padding: 0 175px 0 175px;
 }
 .about-dogs{
@@ -195,9 +159,6 @@ max-width: 430px;
 /**/
 .ourfriends{
     background-color: var(--color-light-l);
-    justify-content: center;
-    display: flex;
-    padding: 80px 0 100px 0;
 }
 .ayee{
     display: flex;
@@ -207,8 +168,6 @@ max-width: 430px;
 .ourfriends-container{
     display: flex;
     justify-content: center;
-
-  width: 1200px;
 }
 
 .ourfriends-logo{
@@ -315,15 +274,7 @@ max-width: 430px;
     }
 }
 /**/
-.help{
-    display: flex;
-    justify-content: center;
-    padding:  80px 0 100px 0;
-}
-.help-container{
-   width: 1200px;
-    
-}
+
 .help-tittle{
     display: flex;
     justify-content: center;
@@ -366,17 +317,12 @@ max-width: 430px;
 }
 /**/
 .addition{
-    display: flex;
-    justify-content: center;
     background-color: var(--color-light-l);
-    padding: 80px 0px 100px 0px;
 }
 .addition-container{
  
     display: flex;
     justify-content: space-around;
-
-    width: 1200px;
 }
 .addition-card{
     display: flex;
@@ -431,8 +377,6 @@ max-width: 430px;
 /**/
 
 .footer{
-    display: flex;
-    justify-content: center;
     background-image:  url("style/images/fon.svg");
     background: linear-gradient(0deg, #211F20, #211F20),
 radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
@@ -440,10 +384,7 @@ background-size: cover;
 background-position: center;
 padding: 40px 0 0 0;
 }
-.footer-container{
-   
-  width: 1200px;
-}
+
 .footer-cards{
     display: flex;
     justify-content: space-around;
