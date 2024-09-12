@@ -1,6 +1,6 @@
 
 .header-nt{
-    background-image:  url("style/images/fon.svg");
+    background-image:  url('/images/fon.svg');
     background-size: cover;
     background-position: center;
   }
@@ -377,7 +377,7 @@ max-width: 430px;
 /**/
 
 .footer{
-    background-image:  url("style/images/fon.svg");
+    background-image:  url("/images/fon.svg");
     background: linear-gradient(0deg, #211F20, #211F20),
 radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%);
 background-size: cover;
