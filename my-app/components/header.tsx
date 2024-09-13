@@ -17,7 +17,7 @@ export default function Header() {
             <img src="/icons/Burger.svg" alt="burger" />
           </div>
           <ul className="nav-list">
-            <li className="active active-about"><Link href="#body">About the shelter</Link></li>
+            <li className="active active-about"><Link href="/">About the shelter</Link></li>
             <li className="active">
               <Link href="/pets">Our pets</Link>
             </li>

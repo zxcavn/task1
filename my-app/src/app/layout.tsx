@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Header from "../../components/header";
+import HeaderSec from "../../components/headersec";
+import Footer from "../../components/footer";
 import "./globals.css";
 import "./styles/main.css";
 import "./styles/ui.css";
 import "./styles/media.css";
 import "./styles/pets.css";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,17 +28,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  headerType = "default",
 }: Readonly<{
   children: React.ReactNode;
+  headerType?: "default" | "secondary";
 }>) {
+  const HeaderComponent = headerType === "secondary" ? HeaderSec : Header;  
   return (
     <html lang="en">
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
+      <HeaderComponent/>
         {children}
-      </body>
+        <Footer/>
+        </body>
     </html>
   );
 }
