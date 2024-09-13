@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Header from "../../components/header";
-import HeaderSec from "../../components/headersec";
-import Footer from "../../components/footer";
+import FooterComponent from "../../components/footer";
 import "./globals.css";
 import "./styles/main.css";
 import "./styles/ui.css";
 import "./styles/media.css";
 import "./styles/pets.css";
+import Header from "../../components/headerOur"
 
 
 const geistSans = localFont({
@@ -33,14 +32,15 @@ export default function RootLayout({
   children: React.ReactNode;
   headerType?: "default" | "secondary";
 }>) {
-  const HeaderComponent = headerType === "secondary" ? HeaderSec : Header;  
+ 
   return (
-    <html lang="en">
-      <body>
-      <HeaderComponent/>
-        {children}
-        <Footer/>
-        </body>
-    </html>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <body>
+      <Header headerType={headerType} />
+      {children}
+      <FooterComponent/>
+    </body>
+  </html>
   );
+
 }
