@@ -1,22 +1,31 @@
-
-.header-nt{
+.header-default{
     background-image:  url('/images/fon.svg');
     background-size: cover;
     background-position: center;
-  }
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 0 0;
+}
+
+
+
+
+
   .header{
     padding: 30px 0 0 0;
   }
+ 
   .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
   }
 
 .logo-container{
    align-items: center;
 }
-.logo{
+.logop{
     font-size: 32px;
     font-weight: 400;
     line-height: 35.2px;
@@ -115,9 +124,14 @@
 .notonly-container{
     display: flex;
     justify-content: space-between; 
+    
 }
 .notonly{
     padding: 100px 0 0 0;
+    background-image:  url('/images/fon.svg');
+    background-size: cover;
+    background-position: center;
+
 }
 
 

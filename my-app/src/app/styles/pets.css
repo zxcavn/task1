@@ -1,37 +1,42 @@
 
 .header-pets{
-    background-image: var(--color-deffault);
-}
-.logop{
-    color: var(--color-dark-l);
-}
-.logopets{
-    color: var(--color-dark-3xl);
-}
-.activep{
-    color: var(--color-dark-l);
-}
-.active-about{
-    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;    
+    .logop{
+        color: var(--color-dark-l);
+    }
+    .logopets{
+        color: var(--color-dark-3xl);
+    }
+    .activep{
+        color: var(--color-dark-l);
+    }
+    .active-about{
+        text-decoration: none;
+    }
+    
+    .activep{
+       
+        color: var(--color-dark-l); 
+        :hover{
+                color:var(--color-dark-3xl) ;   
+        }
+        :active{
+            color:var(--color-dark-3xl);
+        }
+    }
+    .active-our{
+        text-decoration: underline;
+            text-decoration-color: #F1CDB3;
+            text-decoration-thickness: 3px;
+            text-underline-offset: 4px;
+            color:var(--color-dark-3xl);
+    }
 }
 
-.activep{
-   
-    color: var(--color-dark-l); 
-    :hover{
-            color:var(--color-dark-3xl) ;   
-    }
-    :active{
-        color:var(--color-dark-3xl);
-    }
-}
-.active-our{
-    text-decoration: underline;
-        text-decoration-color: #F1CDB3;
-        text-decoration-thickness: 3px;
-        text-underline-offset: 4px;
-        color:var(--color-dark-3xl);
-}
+ 
+
 .ourfriends-cards{
     gap: 40px;
     max-width: 1200px;

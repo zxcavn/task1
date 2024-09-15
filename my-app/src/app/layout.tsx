@@ -6,7 +6,8 @@ import "./styles/main.css";
 import "./styles/ui.css";
 import "./styles/media.css";
 import "./styles/pets.css";
-import Header from "../../components/headerOur"
+import Header from "../../components/header"
+
 
 
 const geistSans = localFont({
@@ -27,16 +28,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  headerType = "default",
 }: Readonly<{
   children: React.ReactNode;
-  headerType?: "default" | "secondary";
 }>) {
  
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
     <body>
-      <Header headerType={headerType} />
+      <Header/>
       {children}
       <FooterComponent/>
     </body>
