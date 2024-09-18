@@ -1,0 +1,253 @@
+.ourfriends{
+    background-color: var(--color-light-l);
+}
+.ayee{
+    display: flex;
+    flex-direction: column;
+  gap: 60px;
+}
+.ourfriends-container{
+    display: flex;
+    justify-content: center;
+}
+.ourfriends-logo{
+    display: flex;
+    justify-content:center; 
+}
+.ourfriends-tittle{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight:400;
+    font-size: 35px;
+    color: var(--color-dark-l);
+    max-width: 400px;  
+    line-height: 45.5px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.ourfriends-cards{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 90px;
+}
+.ourfriends-card-arrow{
+  align-self: center;
+  display: flex;
+  gap: 53px;
+  
+}
+.arrow-center{
+    align-self: center;
+    width: 52px;
+    height: 52px;
+}
+
+.mobile-arrows{
+    display: none;
+}
+.ourfriends-card {
+    background-color: var(--color-light-s);
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    gap: 30px;  
+}
+.ourfriends-text{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 22.72px;
+    color:var(--color-dark-l);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+}
+.button-learn{
+    padding-bottom: 30px;
+}
+.button-white{
+    border-radius: 100px;
+    border: 2px solid var(--color-primary);
+    background-color: var(--color-light-sy);
+    color:var(--color-dark-3xl);
+    padding: 15px 45px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 22.1px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--color-primary-light);
+    }
+}
+
+.ourfriends-button{
+    display: flex;
+    justify-content: center;
+}
+.buttonx{
+    border-radius: 100px;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    color:var(--color-dark-3xl);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.1px;
+    letter-spacing: 1px;
+    padding: 15px 45px;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--color-primary-light);
+    }
+}
+/**/
+@media screen and (max-width: 1280px) {
+    .diskdel{
+        display: none;
+    }
+    .ourfriends-cards{
+        gap: 40px;
+    }
+    .ourfriends-card-arrow{
+        gap: 12px;
+    }
+    .arrow-center{
+        width: 52px;
+        height: 52px;
+    }
+}
+    /**/
+    @media screen and (max-width: 768px){
+       
+        .ourfriends-tittle{
+            font-size: 25px;
+            line-height: 32.5px;
+            max-width: 300px;
+            max-height: 64px;
+        }
+        .ourfriends{
+            padding: 42px 0 42px 0;
+        }
+        .mobile-arrows{
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+        }
+        .arrow-center{
+            display: none;
+        }
+        .ayee{
+            gap: 42px;
+        }
+    }
+
+
+    
+.ourfriends-default{
+    .forpetsslide{
+        display: none;
+    }
+    .notfordefault{
+        display: none;
+    }
+
+    @media screen and (max-width: 1280px){
+        .noneplane{
+            display: none;
+        }   
+    }
+
+
+    @media screen and (max-width: 768px){
+    .mobile-disk{
+        display: none;
+    }
+}
+
+}
+
+.ourfriends-pets{
+    .ourfriends-button{
+        display: none;
+    }
+    .newarrows{
+        display: none;
+    }
+    .ourfriends-cards{
+        display: flex;
+        gap: 30px 40px;
+
+    }
+  
+
+    @media screen and (max-width: 1280px)
+    {
+        .noneplan{
+            display:none;
+        }
+        
+    }
+
+
+    @media screen and (max-width: 768px){
+
+        .nonemob{
+            display: none;
+        }
+    }
+
+    .qwe{
+  
+        border: 2px solid var(--color-primary);
+        padding: 13px 17px 13px 17px;
+        border-radius: 100px;
+        cursor: pointer;
+        &:hover{
+            
+                background-color: var(--color-primary-light);
+            
+        }
+    }
+
+    .forpetsslide{
+        gap: 10px;
+    }
+}
+
+    
+.firstqwe{
+    background-color:var(--color-primary);
+}
+
+
+.qwe{
+  
+    border: 2px solid var(--color-primary);
+    padding: 19px 23px 19px 19px;
+    border-radius: 100px;
+    cursor: pointer;
+    &:hover{
+        
+            background-color: var(--color-primary-light);
+        
+    }
+}
+
+.forpetsslide{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.qwedouble{
+    border: 2px solid var(--color-primary);
+    padding: 8px 12px 12px 8px;
+    border-radius: 100px;
+    cursor: pointer;
+    &:hover{
+            
+        background-color: var(--color-primary-light);
+    
+}
+}
+

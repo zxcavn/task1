@@ -11,6 +11,7 @@ export default function AboutSection() {
             <p className="about-text">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well.</p>
           </div>
         </div>
+        <div ></div>
       </section>
     );
   }

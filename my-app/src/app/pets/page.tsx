@@ -1,11 +1,11 @@
 import RootLayout from "../layout";
-import FriendsSec from "../../../components/friendssec";
+import OurFriendsSection from "../../../components/friends";
 
 
 export default function Pets() {
   return (
     <RootLayout>
-      <FriendsSec />
+      <OurFriendsSection />
     </RootLayout>
   );
 }

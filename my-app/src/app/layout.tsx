@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import FooterComponent from "../../components/footer";
-import "./globals.css";
-import "./styles/main.css";
 import "./styles/ui.css";
-import "./styles/media.css";
 import "./styles/pets.css";
+import "./styles/footer.css";
+import "./styles/donat.css";
+import "./styles/help.css";
+import "./styles/notOnly.css";
+import "./styles/about.css";
+import "./styles/header.css";
+import "./styles/friends.css";
 import Header from "../../components/header"
 
 

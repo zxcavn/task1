@@ -1,0 +1,113 @@
+.addition{
+    background-color: var(--color-light-l);
+}
+.addition-container{
+ 
+    display: flex;
+    justify-content: space-around;
+}
+.addition-card{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.addition-tittle{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 45.5px;
+        color: var(--color-dark-l);
+        max-width: 300px;
+        letter-spacing: 1px;
+}
+.addition-text{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 16.5px;
+        color: var(--color-dark-l);
+        max-width: 307px;
+}
+.addition-bank{
+    display: flex;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-primary);
+    padding: 10px 15px;
+    border-radius: 9px;
+    gap: 15px;
+    max-width: 349px;
+}
+.addition-number{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        color: var(--color-dark-l);
+      letter-spacing: 1px;
+}
+.addition-text-about{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    color:var(--color-dark-m);
+    max-width: 380px;
+}
+/**/
+@media screen and (max-width: 1280px) {
+.addition-container{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
+}
+.addition-card{
+    max-width: 380px;
+    align-self: center;
+}
+.addition-image{
+    display: flex;
+    justify-content: center;
+}
+}
+/**/
+@media screen and (max-width: 768px) {
+    .addition{
+       
+        padding: 42px 0px 42px 0px;
+    }
+    .addition-tittle{
+        font-size: 25px;
+        line-height: 32.5px;
+        min-height: 64px;
+        text-align: center;
+        letter-spacing: 0.06em;
+    }
+    .addition-card{
+        min-width: 300px;
+        text-align: center;
+    }
+    .addition-text-about{
+        text-align: justify;
+    }
+    .addition-number{
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+    .addition-bank{
+        min-width: 281px;
+        align-self: center;
+    }
+    .addition-text-about{
+        max-width: 280px;
+        align-self: center;
+    }
+    .addition-container{
+        gap: 42px;
+    }
+    .doggy{
+        max-width: 265px;
+        max-height: 135px;
+    }
+}
+

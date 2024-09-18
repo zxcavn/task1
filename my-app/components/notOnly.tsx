@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 export default function NotOnly() {
     return (   
     <section className="notonly displayf">
