@@ -2,36 +2,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import SidebarItem from './burger';
+import useClickOutside from './useClickOutside';
 
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setOpen] = useState(false);
-  const modalRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        isOpen &&
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
-      ) {
-        setOpen(false);
-      }
-    };
-
-    document.addEventListener('click', handleOutsideClick);
-
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
-    return () => {
-      document.removeEventListener('click', handleOutsideClick);
-      document.body.style.overflow = 'auto';
-    };
-  }, [isOpen]);
+  const modalRef = useClickOutside(isOpen, setOpen);
 
   const handleLinkClick = () => {
     setOpen(false);
@@ -53,26 +30,14 @@ export default function Header() {
         <div ref={modalRef}>
           <nav className={`header__nav ${isOpen ? '' : 'active'}`}>
             <ul className="nav-list">
-              <li className="active activep active-about">
-                <Link href="/" onClick={handleLinkClick}>
-                  About the shelter
-                </Link>
-              </li>
-              <li className="active activep active-our">
-                <Link href="/pets" onClick={handleLinkClick}>
-                  Our pets
-                </Link>
-              </li>
-              <li className="active activep">
-                <Link href="/#help" onClick={handleLinkClick}>
-                  Help the shelter
-                </Link>
-              </li>
-              <li className="active activep">
-                <Link href="#footer" onClick={handleLinkClick}>
-                  Contacts
-                </Link>
-              </li>
+            {SIDEBAR_ITEMS.map((item, index) => (
+                <SidebarItem
+                  key={index}
+                  text={item.text}
+                  href={item.href}
+                  handleLinkClick={handleLinkClick}
+                />
+              ))}
             </ul>
           </nav>
           <div className="keks">
@@ -88,3 +53,11 @@ export default function Header() {
     </header>
   );
 }
+
+
+const SIDEBAR_ITEMS :{text: string, href: string} [] = [
+  { text: 'About the shelter', href: '/'},
+  { text: 'Our pets', href: '/pets'},
+  { text: 'Help the shelter', href: '/#help'},
+  { text: 'Contacts', href: '/#footer'}
+]

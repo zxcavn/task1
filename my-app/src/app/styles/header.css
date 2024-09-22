@@ -155,17 +155,9 @@
         :hover{
                 color:var(--color-dark-3xl) ;   
         }
-        :active{
-            color:var(--color-dark-3xl);
-        }
+       
     }
-    .active-our{
-        text-decoration: underline;
-            text-decoration-color: #F1CDB3;
-            text-decoration-thickness: 3px;
-            text-underline-offset: 10px;
-            color:var(--color-dark-3xl);
-    }
+   
     @media screen and (max-width: 768px){
     .activep{
       color: var(--color-dark-s); 
@@ -176,8 +168,6 @@
     color:var(--color-light-s);
       }
     }
-    .active-our{
-        color:var(--color-light-s);
-    }
+   
 }
 }
