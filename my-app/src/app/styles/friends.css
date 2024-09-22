@@ -152,7 +152,7 @@
     }
 
     @media screen and (max-width: 1280px){
-        .noneplane{
+        .ourfriends-card:nth-child(3){
             display: none;
         }   
     }
@@ -162,6 +162,9 @@
     .mobile-disk{
         display: none;
     }
+    .ourfriends-card:nth-child(2){
+        display: none;
+    } 
 }
 
 }

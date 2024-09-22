@@ -1,3 +1,4 @@
+"use client";
 export default function DonationSection() {
     return (
         <section className="addition apad displayf">

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import SidebarItem from './burger';
 import useClickOutside from './useClickOutside';
 
+
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setOpen] = useState(false);

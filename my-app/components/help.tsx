@@ -1,3 +1,4 @@
+"use client";
 export default function HelpSection() {
   return (
     <section className="help apad displayf">

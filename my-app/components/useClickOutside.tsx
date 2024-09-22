@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef } from 'react';
 
 const useClickOutside = (isOpen: boolean, setOpen: (open: boolean) => void) => {

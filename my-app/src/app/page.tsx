@@ -1,3 +1,4 @@
+'use client';
 import RootLayout from "./layout";
 import AboutSection from "../../components/about";
 import OurFriendsSection from "../../components/friends";
