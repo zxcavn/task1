@@ -240,3 +240,10 @@
 		background-color: var(--color-primary-light);
 	}
 }
+.qwed {
+	border: 2px solid var(--color-primary);
+	padding: 19px 23px 19px 19px;
+	border-radius: 100px;
+	cursor: pointer;
+	background-color: var(--color-primary-light);
+}

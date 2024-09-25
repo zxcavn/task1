@@ -1,50 +1,23 @@
-'use client'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-
-export type PetData = {
-	name: string
-	img: string
-	type: string
-	breed: string
-	description: string
-	age: string
-	inoculations: string[]
-	diseases: string[]
-	parasites: string[]
-}
-
-export async function fetchPetData(): Promise<PetData[]> {
-	const response = await fetch(
-		'https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/shelter/pets.json'
-	)
-	if (!response.ok) {
-		throw new Error('Failed to fetch pet data')
-	}
-
-	const originalPetData: PetData[] = await response.json()
-
-	// Создаем массив, содержащий 40 элементов
-	const extendedPetData: PetData[] = []
-	for (let i = 0; i < 5; i++) {
-		extendedPetData.push(...originalPetData)
-	}
-
-	return extendedPetData
-}
+import { fetchPetData, PetData } from './petData'
+import Pagination from './getPedData'
+import PetCard from './petCard'
 
 export default function OurFriendsSection() {
 	const pathname = usePathname()
 	const [petData, setPetData] = useState<PetData[]>([])
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const cardsPerSlide = pathname === '/pets' ? 8 : 3
+	const [totalPages, setTotalPages] = useState(0)
 
 	useEffect(() => {
 		const getPetData = async () => {
 			try {
 				const data = await fetchPetData()
 				setPetData(data.sort(() => Math.random() - 0.5))
+				setTotalPages(Math.ceil(data.length / cardsPerSlide))
 			} catch (error) {
 				console.error('Error fetching pet data:', error)
 			}
@@ -53,15 +26,23 @@ export default function OurFriendsSection() {
 	}, [])
 
 	const handlePrevClick = () => {
-		setCurrentIndex(prevIndex =>
-			prevIndex > 0 ? prevIndex - 1 : petData.length - cardsPerSlide
-		)
+		if (currentIndex > 0) {
+			setCurrentIndex(prevIndex => prevIndex - 1)
+		}
 	}
 
 	const handleNextClick = () => {
-		setCurrentIndex(prevIndex =>
-			prevIndex < petData.length - cardsPerSlide ? prevIndex + 1 : 0
-		)
+		if (currentIndex < totalPages - 1) {
+			setCurrentIndex(prevIndex => prevIndex + 1)
+		}
+	}
+
+	const handleFirstClick = () => {
+		setCurrentIndex(0)
+	}
+
+	const handleLastClick = () => {
+		setCurrentIndex(totalPages - 1)
 	}
 
 	const visiblePets = [
@@ -94,20 +75,12 @@ export default function OurFriendsSection() {
 						</div>
 						<div className='ourfriends-cards'>
 							{visiblePets.map((pet, index) => (
-								<div
+								<PetCard
 									key={index}
-									className={`ourfriends-card ${
-										index > cardsPerSlide - 1 ? 'mobile-disk notfordefault' : ''
-									} ${index > cardsPerSlide ? 'nonemob noneplan' : ''}`}
-								>
-									<img src={pet.img} alt={pet.name} />
-									<h4 className='ourfriends-text'>{pet.name}</h4>
-									<div className='button-learn'>
-										<Link href='/pets'>
-											<button className='button-white'>Learn more</button>
-										</Link>
-									</div>
-								</div>
+									pet={pet}
+									index={index}
+									cardsPerSlide={cardsPerSlide}
+								/>
 							))}
 						</div>
 						<div className='arrow-center newarrows'>
@@ -130,21 +103,14 @@ export default function OurFriendsSection() {
 						</Link>
 					</div>
 
-					<div className='forpetsslide'>
-						<button className='qwedouble'>
-							<img className='arrow' src='/icons/__.svg' alt='Arrow' />
-						</button>
-						<button className='qwe' onClick={handlePrevClick}>
-							<img className='arrow' src='/icons/_.svg' alt='Arrow' />
-						</button>
-						<button className='qwe firstqwe'>1</button>
-						<button className='qwe' onClick={handleNextClick}>
-							<img className='arrow' src='/icons/rigth.svg' alt='Arrow' />
-						</button>
-						<button className='qwedouble'>
-							<img className='arrow' src='/icons/rright.svg' alt='Arrow' />
-						</button>
-					</div>
+					<Pagination
+						currentIndex={currentIndex}
+						totalPages={totalPages}
+						handlePrevClick={handlePrevClick}
+						handleNextClick={handleNextClick}
+						handleFirstClick={handleFirstClick}
+						handleLastClick={handleLastClick}
+					/>
 				</div>
 			</div>
 		</section>
