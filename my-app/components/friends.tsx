@@ -12,16 +12,22 @@ export default function OurFriendsSection() {
 	const cardsPerSlide = pathname === '/pets' ? 8 : 3
 	const [totalPages, setTotalPages] = useState(0)
 
-	useEffect(() => {
-		const getPetData = async () => {
-			try {
-				const data = await fetchPetData()
-				setPetData(data.sort(() => Math.random() - 0.5))
-				setTotalPages(Math.ceil(data.length / cardsPerSlide))
-			} catch (error) {
-				console.error('Error fetching pet data:', error)
-			}
+	const handleData = (data: PetData[]) => {
+		const sortedData = data.sort(() => Math.random() - 0.5)
+		setPetData(sortedData)
+		setTotalPages(Math.ceil(sortedData.length / cardsPerSlide))
+	}
+
+	const getPetData = async () => {
+		try {
+			const data = await fetchPetData()
+			handleData(data)
+		} catch (error) {
+			console.error('Error fetching pet data:', error)
 		}
+	}
+
+	useEffect(() => {
 		getPetData()
 	}, [])
 
@@ -69,7 +75,7 @@ export default function OurFriendsSection() {
 					</div>
 					<div className='ourfriends-card-arrow'>
 						<div className='arrow-center newarrows'>
-							<button className='qwe' onClick={handlePrevClick}>
+							<button className='oneClick' onClick={handlePrevClick}>
 								<img className='arrow' src='/icons/Arrow.svg' alt='Arrow' />
 							</button>
 						</div>
@@ -84,16 +90,16 @@ export default function OurFriendsSection() {
 							))}
 						</div>
 						<div className='arrow-center newarrows'>
-							<button className='qwe' onClick={handleNextClick}>
+							<button className='oneClick' onClick={handleNextClick}>
 								<img className='arrow' src='/icons/Arrowtwo.svg' alt='Arrow' />
 							</button>
 						</div>
 					</div>
 					<div className='mobile-arrows newarrows'>
-						<button className='qwe' onClick={handlePrevClick}>
+						<button className='oneClick' onClick={handlePrevClick}>
 							<img className='arrow' src='/icons/Arrow.svg' alt='Arrow' />
 						</button>
-						<button className='qwe' onClick={handleNextClick}>
+						<button className='oneClick' onClick={handleNextClick}>
 							<img className='arrow' src='/icons/Arrowtwo.svg' alt='Arrow' />
 						</button>
 					</div>

@@ -1,23 +1,21 @@
 import Link from 'next/link'
 import { PetData } from './petData'
 import { useEffect, useState } from 'react'
+import PetPopup from './PetPopup'
 
-interface PetCardProps {
+type Props = {
 	pet: PetData
 	index: number
 	cardsPerSlide: number
 }
 
-export default function PetCard({ pet, index, cardsPerSlide }: PetCardProps) {
-	const [open, setOpen] = useState(false)
+export default function PetCard({ pet, index, cardsPerSlide }: Props) {
+	const [isOpen, setIsOpen] = useState(false)
 
 	useEffect(() => {
-		if (open) {
-			document.body.style.overflow = 'hidden'
-		} else {
-			document.body.style.overflow = 'auto'
-		}
-	}, [open])
+		const overflowStyle = isOpen ? 'hidden' : 'auto'
+		document.body.style.overflow = overflowStyle
+	}, [isOpen])
 
 	const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
 		if (
@@ -26,7 +24,7 @@ export default function PetCard({ pet, index, cardsPerSlide }: PetCardProps) {
 		) {
 			return
 		}
-		setOpen(true)
+		setIsOpen(true)
 	}
 
 	return (
@@ -44,50 +42,7 @@ export default function PetCard({ pet, index, cardsPerSlide }: PetCardProps) {
 					<button className='button-white'>Learn more</button>
 				</Link>
 			</div>
-			{open && (
-				<div
-					className='popup-container'
-					onClick={e => {
-						e.stopPropagation()
-						setOpen(false)
-					}}
-				>
-					<div
-						className='popup-content'
-						onClick={e => {
-							e.stopPropagation()
-						}}
-					>
-						<img className='mobile-hide' src={pet.img} alt={pet.name} />
-						<div className='popup-text'>
-							<h4 className='popup-name'>{pet.name}</h4>
-							<h2 className='popup-type'>
-								{pet.type}-{pet.breed}
-							</h2>
-							<h3 className='popup-descrip'>{pet.description}</h3>
-							<div className='popup-infos'>
-								<h4 className='popup-info'>- Age: {pet.age}</h4>
-								<h4 className='popup-info'>
-									- Inoculations: {pet.inoculations}
-								</h4>
-								<h4 className='popup-info'>- Deseases: {pet.diseases}</h4>
-								<h4 className='popup-info'>- Parasites: {pet.parasites}</h4>
-							</div>
-						</div>
-						<div className='button-div'>
-							<button
-								className='button-close'
-								onClick={e => {
-									e.stopPropagation()
-									setOpen(false)
-								}}
-							>
-								X
-							</button>
-						</div>
-					</div>
-				</div>
-			)}
+			{isOpen && <PetPopup pet={pet} onClose={() => setIsOpen(false)} />}
 		</div>
 	)
 }

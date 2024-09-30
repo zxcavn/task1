@@ -203,7 +203,7 @@
 		}
 	}
 
-	.qwe {
+	.oneClick {
 		border: 2px solid var(--color-primary);
 		padding: 13px 17px 13px 17px;
 		border-radius: 100px;
@@ -222,7 +222,7 @@
 	background-color: var(--color-primary);
 }
 
-.qwe {
+.oneClick {
 	border: 2px solid var(--color-primary);
 	padding: 19px 23px 19px 19px;
 	border-radius: 100px;
@@ -238,7 +238,7 @@
 	gap: 20px;
 }
 
-.qwedouble {
+.doubleClick {
 	border: 2px solid var(--color-primary);
 	padding: 8px 12px 12px 8px;
 	border-radius: 100px;
@@ -247,7 +247,7 @@
 		background-color: var(--color-primary-light);
 	}
 }
-.qwed {
+.pagination {
 	border: 2px solid var(--color-primary);
 	padding: 19px 23px 19px 19px;
 	border-radius: 100px;
@@ -297,12 +297,10 @@
 	font-size: 35px;
 	line-height: 45px;
 	font-weight: 400;
-	font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .popup-type {
 	font-size: 20px;
-	font-family: Georgia, 'Times New Roman', Times, serif;
 	line-height: 23px;
 	font-weight: 400;
 }
@@ -311,7 +309,6 @@
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 14px;
-	font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .popup-infos {
@@ -321,7 +318,6 @@
 }
 
 .popup-info {
-	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-size: 15px;
 	font-weight: 700;
 	line-height: 16px;

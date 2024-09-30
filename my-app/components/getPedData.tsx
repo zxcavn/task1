@@ -1,4 +1,4 @@
-interface PaginationProps {
+interface Props {
 	currentIndex: number
 	totalPages: number
 	handlePrevClick: () => void
@@ -13,13 +13,13 @@ export default function Pagination({
 	handleNextClick,
 	handleFirstClick,
 	handleLastClick,
-}: PaginationProps) {
+}: Props) {
 	const currentPage = currentIndex + 1
 
 	const paginationButtons = [
 		<button
 			key={currentPage - 1}
-			className={`qwed ${currentPage === 1 ? '' : ''}`}
+			className='pagination '
 			onClick={() => {
 				if (currentPage > 1) {
 					handlePrevClick()
@@ -32,17 +32,17 @@ export default function Pagination({
 
 	return (
 		<div className='forpetsslide'>
-			<button className='qwedouble' onClick={handleFirstClick}>
+			<button className='doubleClick' onClick={handleFirstClick}>
 				<img className='arrow' src='/icons/__.svg' alt='Arrow' />
 			</button>
-			<button className='qwe' onClick={handlePrevClick}>
+			<button className='oneClick' onClick={handlePrevClick}>
 				<img className='arrow' src='/icons/_.svg' alt='Arrow' />
 			</button>
 			{paginationButtons}
-			<button className='qwe' onClick={handleNextClick}>
+			<button className='oneClick' onClick={handleNextClick}>
 				<img className='arrow' src='/icons/rigth.svg' alt='Arrow' />
 			</button>
-			<button className='qwedouble' onClick={handleLastClick}>
+			<button className='doubleClick' onClick={handleLastClick}>
 				<img className='arrow' src='/icons/rright.svg' alt='Arrow' />
 			</button>
 		</div>
