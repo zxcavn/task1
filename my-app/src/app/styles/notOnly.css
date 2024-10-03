@@ -1,0 +1,90 @@
+.notonly-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 42px;
+}
+.notonly-container {
+	display: flex;
+	justify-content: space-between;
+}
+.notonly {
+	padding: 100px 0 0 0;
+	background-image: url('/images/fon.svg');
+	background-size: cover;
+	background-position: center;
+}
+.tittle-text {
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 24px;
+	color: var(--color-dark-s);
+	max-width: 460px;
+	max-height: 72px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.tittle {
+	font-size: 44px;
+	font-weight: 400;
+	line-height: 57.2px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	color: var(--color-deffault);
+	max-width: 310px;
+	max-height: 114px;
+}
+.button {
+	border-radius: 101px;
+	border: 1px solid var(--color-primary);
+	background-color: var(--color-primary);
+	color: var(--color-dark-3xl);
+	font-size: 17px;
+	line-height: 22.1px;
+	padding: 15px 45px;
+	cursor: pointer;
+	max-width: 207px;
+	font-weight: 400;
+	&:hover {
+		background-color: var(--color-primary-light);
+	}
+}
+/**/
+@media screen and (max-width: 1280px) {
+	.notonly-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 100px;
+	}
+	.dog {
+		max-width: 569px;
+		max-height: 593px;
+	}
+	.button-container {
+		align-self: center;
+	}
+}
+/**/
+@media screen and (max-width: 768px) {
+	.notonly-container {
+		gap: 105px;
+	}
+	.notonly {
+		padding: 42px 0 0 0;
+	}
+	.tittle {
+		font-size: 25px;
+		text-align: center;
+		max-width: 300px;
+		max-height: 64px;
+		line-height: 32.5px;
+	}
+	.dog {
+		max-width: 260px;
+		max-height: 271px;
+	}
+	.tittle-text {
+		max-width: 300px;
+		max-height: 96px;
+		text-align: center;
+	}
+}
