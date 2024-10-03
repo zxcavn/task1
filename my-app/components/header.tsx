@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import { useState, createRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import SidebarItem from './burger'
@@ -9,7 +9,13 @@ import { SIDEBAR_ITEMS } from '../constants/items'
 export default function Header() {
 	const pathname = usePathname()
 	const [isOpen, setOpen] = useState(false)
-	const modalRef = useClickOutside(isOpen, setOpen)
+	const modalRef = createRef<HTMLDivElement>()
+
+	const cb = () => {
+		setOpen(false)
+	}
+
+	useClickOutside(modalRef, cb)
 
 	const handleLinkClick = () => {
 		setOpen(false)

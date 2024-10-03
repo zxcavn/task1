@@ -1,35 +1,23 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
-const useClickOutside = (isOpen: boolean, setOpen: (open: boolean) => void) => {
-	const ref = useRef<HTMLDivElement>(null)
-
+const useClickOutside = (
+	ref: React.RefObject<HTMLDivElement>,
+	cb: () => void
+) => {
 	useEffect(() => {
 		const handleOutsideClick = (event: MouseEvent) => {
-			if (
-				isOpen &&
-				ref.current &&
-				!ref.current.contains(event.target as Node)
-			) {
-				setOpen(false)
+			if (!ref.current?.contains(event.target as Node)) {
+				cb()
 			}
 		}
 
 		document.addEventListener('click', handleOutsideClick)
 
-		if (isOpen) {
-			document.body.style.overflow = 'hidden'
-		} else {
-			document.body.style.overflow = 'auto'
-		}
-
 		return () => {
 			document.removeEventListener('click', handleOutsideClick)
-			document.body.style.overflow = 'auto'
 		}
-	}, [isOpen, setOpen])
-
-	return ref
+	}, [ref, cb])
 }
 
 export default useClickOutside
